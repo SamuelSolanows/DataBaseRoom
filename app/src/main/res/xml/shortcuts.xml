@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shorcuts xmlns:android="http://schemas.android.com/apk/res/android">
+    <shortcut
+        android:enabled="true"
+        android:icon="@drawable/baseline_drive_eta_24"
+        android:shortcutId="activity1"
+        android:shortcutLongLabel="@string/namelong"
+        android:shortcutShortLabel="@string/namelong">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetClass="com.example.databaseroom.MainActivity"
+            android:targetPackage="com.example.databaseroom" />
+    </shortcut>
+
+    <shortcut
+        android:enabled="true"
+        android:icon="@drawable/ic_launcher_foreground"
+        android:shortcutId="activity1"
+        android:shortcutLongLabel="@string/namelong"
+        android:shortcutShortLabel="@string/namelong">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetClass="com.example.databaseroom.MainActivity"
+            android:targetPackage="com.example.databaseroom" />
+    </shortcut>
+</shorcuts>

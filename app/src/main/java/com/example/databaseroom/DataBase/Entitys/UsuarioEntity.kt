@@ -1,4 +1,4 @@
-package com.example.databaseroom.DataBase
+package com.example.databaseroom.DataBase.Entitys
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
@@ -6,20 +6,17 @@ import androidx.room.ForeignKey
 import androidx.room.PrimaryKey
 
 @Entity(
-    tableName = "Usuario",
     foreignKeys = [ForeignKey(
-        entity = Sexo::class,
+        entity = SexoEntity::class,
         parentColumns = ["id"],
-        childColumns = ["IdSexo"]
+        childColumns = ["idSexo"]
     )]
 )
-data class Usuario(
+data class UsuarioEntity(
     @PrimaryKey(autoGenerate = true)
     var id: Int,
-
-    @ColumnInfo(name = "Nombre")
+    @ColumnInfo
     var nombre: String,
-
-    @ColumnInfo(name = "IdSexo")
-    var IdSexo: Int
+    @ColumnInfo
+    var idSexo: Int
 )

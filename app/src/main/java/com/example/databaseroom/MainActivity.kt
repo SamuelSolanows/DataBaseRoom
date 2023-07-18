@@ -3,8 +3,9 @@ package com.example.databaseroom
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import com.example.databaseroom.DataBase.DBconexion
-import com.example.databaseroom.DataBase.Sexo
+import com.example.databaseroom.DataBase.Entitys.SexoEntity
 import com.example.databaseroom.databinding.ActivityMainBinding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -26,14 +27,15 @@ class MainActivity : AppCompatActivity() {
 
     fun Agregar() {
         CoroutineScope(Dispatchers.IO).launch {
+
             try {
-                db.SexoDao().Insertar(Sexo(0, binding.txt.text.toString()))
+                db.SexoDao().Insertar(SexoEntity(0, binding.txt.text.toString()))
                 var lis = db.SexoDao().Get()
                 Log.e("Guardado", "guardado: ${lis.size}")
+                binding.txt.setText("")
             } catch (e: Exception) {
                 Log.e("Error", "Error: ${e.message}")
             }
-
         }
     }
 }
